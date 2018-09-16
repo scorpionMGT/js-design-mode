@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ip = require("ip")
 module.exports = {
     entry: {
-        index: path.resolve(__dirname, "../src/index") // index 为chunk 名称
+        index: path.resolve(__dirname, "../src/loading") // index 为chunk 名称
     },
     output: {
         path: path.resolve(__dirname, "../dist"),
@@ -35,7 +35,7 @@ module.exports = {
             minify: {
                 collapseWhitespace: true,
             },
-            inject: "head" //引入的脚本放在head头部标签中
+            inject: 'body' //引入的脚本放在body头部标签中
         })
     ],
     resolve: {

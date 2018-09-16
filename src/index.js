@@ -1,12 +1,25 @@
 class Person {
-    constructor(name){
+    constructor(name,age){
         this.name = name
+        this.age =age
     }
     getName(){
         return this.name
     }
+    getAge(){
+        return this.age
+    }
 }
 
-let p = new Person("maoguotao11");
+class Student extends Person {
+       constructor(name,age,number){
+           super(name,age)
+           this.number = number
+       }
+       study(){
+           alert(`${this.name} 学习`)
+       }
+}
 
-alert(p.name)
+let s = new Student("小明",21,"141304011015")
+s.study()
