@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <a href="" class="a1">a1</a>
+        <a href="" class="a2">a2</a>
+        <a href="" class="a3">a3</a>
+        <a href="" class="a4">a4</a>
+        <a href="" class="a5">a5</a>
+    </div>
+</body>
+<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+<script>
+    let a = [1, 2, 3];
+    let nodeList = document.getElementsByTagName('a');
+    let $a = $("a");
+    // 遍历数组
+    a.forEach((item, index, arr) => {
+        console.log(`${index}:${item}`);
+    });
+    // 遍历 nodeList
+    let i, length = nodeList.length;
+    for (i = 0; i < length; i++) {
+        console.log(nodeList[i]);
+    }
+    //遍历 $a
+    $a.each((index, item) => {
+        console.log(index,item);
+    })
+</script>
+
+</html>
