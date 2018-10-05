@@ -49,4 +49,6 @@ s.setState(2);
 // 场景
 // 网页事件绑定
 // Promise
-// nodejs自定义事件
+// nodejs自定义事件,vue的生命周期，vue 的 watch 
+
+// 主题和观察者分离，不是主动触发而是被动监听，两者解耦
