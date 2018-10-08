@@ -21,6 +21,7 @@ class Subject {
             observer.update()
         })
     }
+    //派发
     attach(observer) {
         this.observers.push(observer)
     }
