@@ -17,3 +17,10 @@ Publisher.deliver("extre extre read all about it")
 
 // 发布者取消登记订阅的用户，用一个订阅者作为回调函数参数
 Publisher.unSubscriberCustomer(Subscriber)
+
+
+var NewYorkTimes = new Publisher
+
+var AustinHerald = new Publisher
+
+var Sfchronicle = new Publisher
