@@ -10,10 +10,10 @@ let fn = function () {
     return '单体模式'
 }
 let fn1 = function () {
-    console.log('单体模式1')
+    return '单体模式'
 }
 let single = getSingle(fn)
 let single1 = getSingle(fn1)
-console.log(single(), single(), single1())
+console.log(single(), single() === single())
 
 
