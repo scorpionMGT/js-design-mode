@@ -67,3 +67,5 @@ chainOrder1000.setNextSuccessor(chainOrder500)
 chainOrder1000.passRequest(4, true, 1000)
 
 // 经常用职责链模式重构多重选择的函数
+
+//也可以在异步的时候使用职责连模式
