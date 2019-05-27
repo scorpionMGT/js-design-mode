@@ -20,7 +20,7 @@ let orderNormal = (orderType, pay, stock) => {
 // 职责链模式
 class Chain  {
    constructor (fn) {
-       this.fn = fn 
+       this.fn = fn
        this.successor = null
    }
    setNextSuccessor (successor) {
@@ -54,7 +54,7 @@ chainOrder200.setNextSuccessor(chainOrderNormal)
 
 
 // 某一天需求要增加一个定金 1000元， 享有300优惠券，并且送beat便携式耳机，和保修期限增加一年
-// 因此只需orderType 为 4 
+// 因此只需orderType 为 4
 let order1000 = (orderType, pay, stock) => {
     if (orderType === 4 && pay === true) console.log('1000元定金订购， 享有300优惠券，并且送beat便携式耳机，和保修期限增加一年')
     else return 'nextSuccessor'  // 我也不知道下个一节点是谁，反正就是把请求往后面传递
