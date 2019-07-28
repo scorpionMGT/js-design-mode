@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ip = require("ip")
 module.exports = {
     entry: {
-        index: path.resolve(__dirname, "../src/decoratorPattern/index1.js") // index 为chunk 名称
+        index: path.resolve(__dirname, "../src/app.js") // index 为chunk 名称
     },
     output: {
         path: path.resolve(__dirname, "../dist"),
@@ -52,5 +52,6 @@ module.exports = {
         port: 8023,
         host: ip.address(),
         open: true,
+        // hot: true,
     }
 }

@@ -34,3 +34,5 @@ console.log("single1 === single2", single1 === single3) // false
 
 // 模拟登陆框，购物车，或者只能播放一首歌的类。
 // vuex中的store
+
+// 单例模式的定义是，保证一个类仅有一个类，并提供一个访问他的全局访问点

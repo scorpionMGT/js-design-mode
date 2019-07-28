@@ -1,4 +1,4 @@
-let getSingle = function (fn) {
+export let getSingle = function (fn) {
     let result
     return function () {
         console.log('this', this, result, fn.apply(this, arguments))
@@ -6,14 +6,14 @@ let getSingle = function (fn) {
     }
 }
 
-let fn = function () {
-    return '单体模式'
-}
-let fn1 = function () {
-    return '单体模式'
-}
-let single = getSingle(fn)
-let single1 = getSingle(fn1)
-console.log(single(), single() === single())
+// let fn = function () {
+//     return '单体模式'
+// }
+// let fn1 = function () {
+//     return '单体模式'
+// }
+// let single = getSingle(fn)
+// let single1 = getSingle(fn1)
+// console.log(single(), single() === single())
 
 
