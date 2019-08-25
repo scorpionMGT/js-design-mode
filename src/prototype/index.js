@@ -1,3 +1,3 @@
 export default function Vue () {
-    console.log('vue')
+    // console.log('vue')
 }

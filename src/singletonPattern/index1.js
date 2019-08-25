@@ -1,7 +1,7 @@
 export let getSingle = function (fn) {
     let result
     return function () {
-        console.log('this', this, result, fn.apply(this, arguments))
+        // console.log('this', this, result, fn.apply(this, arguments))
         return result || (result = fn.apply(this, arguments))
     }
 }
