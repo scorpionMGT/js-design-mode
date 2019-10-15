@@ -15,4 +15,5 @@ MIME 类型是一种文本标记，表示一种主要的对象类型额一个特
 **主对象类型/特定的子类型**
 
 ## URI = URL + URN
+
 URI（uniform resource identifier）服务器资源名被称为统一资源表示符，他有两种形式URL和URN
