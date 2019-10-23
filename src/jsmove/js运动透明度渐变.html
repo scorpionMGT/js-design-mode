@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js运动之透明度渐变</title>
+<style type="text/css">
+*{margin:0;padding: 0;font-size: 14px;font-family: ;}
+#div1{width: 100px;height: 100px;background: #F00;opacity: 0.3;filter: alpha(opacity:30);}	
+</style>
+<script type="text/javascript">
+	window.onload=function () {
+		var Odiv=document.getElementById('div1');
+		Odiv.onmouseover=function(){
+			startmove(100);
+		}
+		
+		Odiv.onmouseout=function(){
+		startmove(30);
+		}
+	}
+	var timer=null;
+	var alpha=30;
+    function startmove(target) {
+    	var Odiv=document.getElementById('div1');
+    	clearInterval(timer);
+    
+    	timer=setInterval(function(){
+    		var speed=0;
+    		if(alpha>target){speed=-10;}
+    		else{speed=10;}
+    	
+    	if (alpha==target) {clearInterval(timer);}
+    		else{alpha+=speed;
+    			Odiv.style.filter = 'alpha(opacity:'+alpha+')';
+    			Odiv.style.opacity=alpha/100;}
+    	},30);
+    	
+    }
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>

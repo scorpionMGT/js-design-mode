@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>导航菜单栏</title>
+<style type="text/css">
+*{
+	margin: 0;padding: 0;
+	
+	background: #fff;
+}
+#main{width: 230px;
+	border: 2px solid #E4393C;
+
+    
+   margin-left:20px;
+   margin-top: 20px; 
+}	
+#topmenu{
+	background: #E4393C;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+    padding-left: 20px;
+	 color: #FFF;
+}
+#main li {
+height :30px;
+line-height: 30px;
+font-size: 16px;
+text-align: left;
+list-style-type:  none;/*设置li标签前面的序号为无*/
+z-index: 3;/*设置z坐标的值*/
+background-image:url(http://img.mukewang.com/5411027300014f0200220030.jpg);
+background-repeat: no-repeat;
+background-position: right;
+}
+#main li a{
+	padding-left: 12px;
+    text-decoration: none ;/*去除下划线*/
+    color: #3D3D3D;
+}
+#main li:hover{
+	
+	background-image:  none;
+	border:1px solid #DDD;
+	border-right: none;
+	border-left:4px solid  #E4393C;
+    box-shadow: 0 0 8px #DDD;
+    -moz-box-shadow:0 0 8px #DDD;/*针对火狐firefox浏览器的兼容*/
+    -webkit-box-shadow:0 0 8px #DDD;/*针对谷歌chrome浏览器的兼容*/
+
+}
+#main li a:hover{
+  font-size: 18px;
+  text-decoration: underline;
+  color: red;
+  font-weight: bold;
+}
+
+.floatmenu1{
+	display:none;
+	width:720px;
+	left:235px;
+	position: absolute;
+	top: 40px;
+   border: 1px solid #DDD;
+   z-index: 4;
+   background:white;
+    box-shadow: 0 0 8px #DDD;/*边框外发光效果*/
+    -moz-box-shadow:0 0 8px #DDD;/*针对火狐firefox浏览器的兼容*/
+    -webkit-box-shadow:0 0 8px #DDD;/*针对谷歌chrome浏览器的兼容*/
+}
+#leftdiv{
+	background-color: white;
+	float: left;
+	width: 500px;
+	margin: 15px;
+}
+#rightdiv{
+	background-color: red;
+	float: left;
+	width: 180px;
+	margin: 5px;
+    height: 200px;
+}
+#main li:hover .floatmenu1{
+/*
+.父元素:hover .子元素{
+   含义就是，父元素hover时，对子元素的CSS样式设置
+}
+*/
+	display: block;
+}
+#main li:hover span{
+	background: white;
+	display: inline-block;
+	z-index: 20;
+	width: 20px;
+	height: 30px;
+	float: right;
+	position: relative;
+}
+#leftdiv dl
+        {
+            display: block;
+            border-bottom: 1px solid #EEE;
+            padding-bottom: 6px;
+            overflow: hidden;
+        }
+        #leftdiv dl dt{
+        	display: block;
+        	float: left;
+        	width: 60px;
+           text-align: right;
+           height: 22px;
+           line-height: 22px;
+           padding-right: 6px;
+        }
+#leftdiv dl dt a{
+	color: #E4393C
+	font-weight:bold;
+	text-decoration: underline;
+	font-size: 15px;
+
+}
+#leftdiv dl dd{
+	display: block;
+	overflow: hidden;
+
+}
+#leftdiv dl dd a{
+	display: block;
+	float: left;
+	border-left: 1px solid #3D3D3D;
+	text-align: center;
+
+}
+</style>
+</head>
+
+<body> 
+<ul id="main">
+<div id="topmenu">
+全部商品分类
+</div>
+	<li><a href="http://www.jd.com"target="_blank"> 图书、音像、数字商品</a><span></span>
+     <div class="floatmenu1">
+     	<div id="leftdiv">
+     	 <dl>
+            <dt><a href="#">电子书</a></dt>
+            <dd>
+            <a href="#">免费</a> <a href="#">小说</a> <a href="#">励志与成功</a> <a href="#">婚恋/两性</a>
+            <a href="#">文学</a> <a href="#">经管</a> <a href="#">畅读VIP</a>
+            </dd>
+        </dl>
+         <dl>
+            <dt><a href="#">电子书</a></dt>
+            <dd>
+            <a href="#">免费</a> <a href="#">小说</a> <a href="#">励志与成功</a> <a href="#">婚恋/两性</a>
+            <a href="#">文学</a> <a href="#">经管</a> <a href="#">畅读VIP</a>
+            </dd>
+        </dl>
+         <dl>
+            <dt><a href="#">电子书</a></dt>
+            <dd>
+            <a href="#">免费</a> <a href="#">小说</a> <a href="#">励志与成功</a> <a href="#">婚恋/两性</a>
+            <a href="#">文学</a> <a href="#">经管</a> <a href="#">畅读VIP</a>
+            </dd>
+        </dl>
+         <dl>
+            <dt><a href="#">电子书</a></dt>
+            <dd>
+            <a href="#">免费</a> <a href="#">小说</a> <a href="#">励志与成功</a> <a href="#">婚恋/两性</a>
+            <a href="#">文学</a> <a href="#">经管</a> <a href="#">畅读VIP</a>
+            </dd>
+        </dl>
+         <dl>
+            <dt><a href="#">电子书</a></dt>
+            <dd>
+            <a href="#">免费</a> <a href="#">小说</a> <a href="#">励志与成功</a> <a href="#">婚恋/两性</a>
+            <a href="#">文学</a> <a href="#">经管</a> <a href="#">畅读VIP</a>
+            </dd>
+        </dl>
+         <dl>
+            <dt><a href="#">电子书</a></dt>
+            <dd>
+            <a href="#">免费</a> <a href="#">小说</a> <a href="#">励志与成功</a> <a href="#">婚恋/两性</a>
+            <a href="#">文学</a> <a href="#">经管</a> <a href="#">畅读VIP</a>
+            </dd>
+        </dl>
+         <dl>
+            <dt><a href="#">电子书</a></dt>
+            <dd>
+            <a href="#">免费</a> <a href="#">小说</a> <a href="#">励志与成功</a> <a href="#">婚恋/两性</a>
+            <a href="#">文学</a> <a href="#">经管</a> <a href="#">畅读VIP</a>
+            </dd>
+        </dl>
+     	</div>
+     	<div id="rightdiv">广告</div>
+     </div>
+	</li>
+	<li><a href="http://www.jd.com"target="_blank">家用电器</a></li>
+	<li><a href="http://www.jd.com"target="_blank">手机、数码</a></li>
+	<li><a href="http://www.jd.com"target="_blank">电脑、办公</a></li>
+	<li><a href="http://www.jd.com"target="_blank">家居、家具、家装、厨具</a></li>
+	<li><a href="http://www.jd.com"target="_blank">服饰内衣、珠宝首饰</a></li>
+	<li><a href="http://www.jd.com"target="_blank">个护化妆</a></li>
+	<li><a href="http://www.jd.com"target="_blank">鞋靴、箱包、钟表、奢侈品</a></li>
+    <li><a href="http://www.jd.com"target="_blank">运动户外</a></li>
+    <li><a href="http://www.jd.com"target="_blank">汽车用品</a></li>
+    <li><a href="http://www.jd.com"target="_blank">母婴、玩具乐器</a></li>
+    <li><a href="http://www.jd.com"target="_blank">食品饮料、酒类、生鲜</a></li>
+    <li><a href="http://www.jd.com"target="_blank">营养保健</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>多物体改变透明度</title>
+<style>
+*{margin:0;padding:0;}
+div{width:100px;height:100px;margin:10px;float:left;background:green;filter:alpha(opacity:30);opacity:0.3;}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementsByTagName('div');
+	for(var i=0,l=oDiv.length;i<l;i++){
+		oDiv[i].alpha=30;
+		oDiv[i].onmouseover=function(){
+		startChange(this,100);
+		}
+		oDiv[i].onmouseout=function(){
+		startChange(this,30);
+		}
+	}
+}
+function startChange(obj,target){
+	clearInterval(obj.timer);
+	var speed=obj.alpha>target?-10:10;
+	obj.timer=setInterval(function(){
+		//var speed=obj.alpha>target?-10:10;
+		if(obj.alpha==target){
+		clearInterval(obj.timer);	
+		}else{
+		obj.alpha+=speed;
+		obj.style.filter='alpha(opacity:'+obj.alpha+')';	
+		obj.style.opacity=obj.alpha/100;
+		}
+		},30)
+}
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<div id="div4"></div>
+</body>
+</html>

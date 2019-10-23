@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta  charset="utf-8">
+<title>链式运动</title>
+<style>
+*{
+margin:0;
+padding:0;
+}
+#li1{
+width: 100px;
+height:100px;
+background: blue;
+filter: alpha(opacity:30);
+opacity: 0.3;
+border: 2px solid red;
+	}
+	</style>
+	<script type="text/javascript"  src="THechainmove.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var Oli=document.getElementById('li1');
+			Oli.onmouseover=function () {
+				startmove(Oli,'width',400,function(){
+                   startmove(Oli,'height',400,function(){
+                   	startmove(Oli,'opacity',100);
+                   });
+				});
+			}
+			Oli.onmouseout=function(){
+				startmove(Oli,'opacity',30,function(){
+					startmove(Oli,'height',100,function(){
+						startmove(Oli,'width',100);
+					});
+				});
+			}
+		}/*链式运动函数： 鼠标移开执行的动作 与 鼠标滑过的动作相反 。
+所谓的链式运动，就是在平常的动画运动函数最后在传入一个参数，当第一个动画运动运动完后，检测一下有没有继续传入的参数，如果有的话就继续运行这个参数，这样重复下去就可以完成一套链式运动*/
+	</script>
+</head>
+
+<body>
+<ul><li id="li1"></li></ul>
+</body>
+</html>

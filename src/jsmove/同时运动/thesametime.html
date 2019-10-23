@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset=utf-8">
+<title>同时运动</title>
+<style type="text/css">
+*{margin: 0;padding: 0}
+#li1{width: 100px;height: 100px;background: red;filter: alpha(opacity:30);opacity: 0.3;border: 2px solid blue;margin-top:10px;}	
+</style>
+<script src="Thesametimemove.js"></script>
+<script type="text/javascript">
+  window.onload=function(){
+    var Oli=document.getElementById('li1');   	
+         	Oli.onmouseover=function(){
+       startmove(Oli,{width:400,height:400,opacity:100});	
+         }
+         Oli.onmouseout=function(){
+         	startmove(Oli,{width:100,height:100,opacity:30});
+         }
+  }
+		</script>
+	</head>
+<body>
+<ul >
+<li id="li1"></li>
+</ul>
+</body>
+</html>

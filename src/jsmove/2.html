@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>js动画效果之速度动画</title>
+
+<style>
+*{ margin:0; padding:0; font:12px/1.5em Arial, Helvetica, sans-serif normal;}
+#div1{ width:100px; height:100px;
+background-color:#FF0; position:relative;
+left:-100px; top:200px;}
+#share{ width:14px; height:50px;
+background-color:#9FC;
+position:absolute;
+left:100px; top:25px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+var oDiv1=document.getElementById('div1');
+
+oDiv1.onmouseover=function(){
+starMove(0);
+};
+
+oDiv1.onmouseout=function(){
+starMove(-200);
+};
+};
+
+//匀速运动
+var timer1=null;
+speed=0;
+function starMove(iTarget){
+var oDiv1=document.getElementById('div1');
+clearInterval(timer1);//清除定时器
+timer1=setInterval(function(){
+if(oDiv1.offsetLeft==iTarget){//offsetLeft:为当前div偏移值
+clearInterval(timer1);
+}else{
+if(iTarget<0){//如果要达到的点为负值就当前正值递减
+speed=-10;
+
+}else{//如果要达到的点为正值就当前负值递增
+speed=10;
+}
+oDiv1.style.left=oDiv1.offsetLeft+speed+'px';
+}
+},30);
+
+}
+
+</head>
+
+<body>
+<div id="div1">
+<div id="share"><p class="p1">分<br/>享</p></div>
+</div>
+</body>
+</html>
+
+

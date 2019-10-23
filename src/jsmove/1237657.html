@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style type="text/css">
+*{margin:0; padding:0;}
+#div1{width:500px; height:500px; background: #F00; opacity:0.3; filter:alpha(opacity:30);} /* opacity:0.3; filter:alpha(opacity:30)设置透明度*/
+</style>
+
+<script type="text/javascript">
+window.onload = function(){
+var odiv = document.getElementById('div1');
+odiv.onmouseover = function(){
+startMove(100);
+}
+odiv.onmouseout = function(){
+startMove(30);
+}}
+var time = null;
+var alpha = 30; //透明度没有属性所以，创建透明变量，并赋值属性
+function startMove(iTarget){
+var odiv = document.getElementById('div1');
+clearInterval(time);
+time = setInterval(function(){
+var speed = 0;
+if(alpha < iTarget){
+speed = 10;
+} else {
+speed = -10;
+}
+if(alpha == iTarget){
+clearInterval(time);
+} else {
+alpha += speed;
+odiv.style.filter = 'alpha(opacity:'+alpha+')';
+odiv.style.opacity = alpha / 100;
+}},50);}
+</script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

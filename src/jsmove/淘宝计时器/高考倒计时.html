@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>计时器</title>
+<script type="text/javascript">
+	window.onload=function () {	
+		var currentdate=new Date();
+		var targetdate=new Date('2017/6/6');//设置结束的日期
+	    var time=targetdate.getTime()-currentdate.getTime();
+	    var shijian=Math.ceil(time/(24*60*60*1000));
+	    document.getElementById('time').innerHTML="距离高考还有"+shijian+"天";
+	    //alert(shijian);
+	//alert( document.getElementById('time').innerHTMl);
+	 //alert(time);
+	 //getTime为获取毫秒数，两个时间相减得到的数是毫秒数为单位。
+}
+</script>
+</head>
+
+<body>
+   <div id='time'>显示时间</div>
+</body>
+</html>

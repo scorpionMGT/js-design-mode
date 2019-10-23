@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" >
+<title>js的多物体任意值的变换运动</title>
+<style>
+*{margin: 0;padding: 0;}
+ul{list-style: none	;
+}
+ul li{width: 100px;height: 100px;background: red;margin-top: 10px;border: 2px solid blue;
+font-size: 14px;color: yellow;opacity: 0.3;filter:alpha(opacity:30);}/*对IE用filter对火狐浏览器用opacity*/
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+          var li1=document.getElementById('li1');
+        li1.onmouseover=function(){
+           startmove(this,'width',400); 
+        } 
+        li1.onmouseout=function(){
+            startmove(this,'width',100);  
+        }   
+        } 
+     function getstyle(obj,attr) {
+      if(obj.currentStyle){//IE浏览器
+            return obj.currentStyle[attr];
+
+      }else{return getComputedStyle(obj,false)[attr]
+}     // firefox浏览器body...
+ }
+      function startmove(obj,bttr,iTarget) {
+      	clearInterval(obj.timer);
+      	obj.timer=setInterval(function(){       
+             var icur=0;
+        if (bttr=='opacity') {
+          icur=Math.round(parseFloat(getstyle(obj,bttr))*100);
+        } else{
+         icur=parseInt(getstyle(obj,bttr));   }
+      		var speed=(iTarget-icur)/8;
+      		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+      		if (icur==iTarget) {
+      			clearInterval(obj.timer);
+      		}else{
+            if (bttr=='opacity') {
+              obj.style.filter='alpha(opacity:'+(icur+speed)+')';
+              obj.style.opacity=(icur+speed)/100;
+            }else{
+      			obj.style[bttr]=icur+speed+'px';
+      			}//obj.style.fontSize=parseInt(getstyle(obj,'fontSize'))+1+"px";
+      		}//offsetWidth为整个的div的值包括border
+      		//obj.style.width为div的width（不包括border）；
+      		      	},30);
+      	// body...
+      }/*
+      parseInt(String s,[int radix])用于字符串返回一个整型数字
+      用js的style属性可以获得html标签样式，，但是不能获取非行间样式。即：  用document.getElementById(‘element').style.xxx可以获取元素的样式信息，可是它获取的只是DOM元素style属性里的样式规则，对于通过class属性引用的外部样式表，就拿不到我们要的信息了。所以js用currentStyle和getComputedStyle获取css的非行间样式；*/
+</script>
+</head>
+
+<body>
+<ul>
+<li id="li1">nihao	</li>
+
+
+</ul>
+</body>
+</html>

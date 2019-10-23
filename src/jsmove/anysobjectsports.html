@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js的多物体任意值的变换运动</title>
+<style>
+*{margin: 0;padding: 0;}
+ul{list-style: none     ;
+}
+ul li{width: 100px;height: 100px;background: red;margin-top: 10px;border: 2px solid blue;
+font-size: 14px;color: yellow;}
+</style>
+<script type="text/javascript">
+      window.onload=function(){
+          var li1=document.getElementById('li1');
+          var   li2=document.getElementById('li2');
+        li1.onmouseover=function(){
+            startmove1(this,400);
+        } 
+        li1.onmouseout=function(){
+            startmove1(this,100);
+        } 
+        li2.onmouseover=function(){
+            startmove2(this,400);
+        } 
+        li2.onmouseout=function(){
+            startmove2(this,100);
+        } 
+            }
+
+     function getstyle(obj,attr) {
+      if(obj.currentStyle){//IE浏览器
+            return obj.currentStyle[attr];
+
+      }else{return getComputedStyle(obj,false)[attr]
+}     // firefox浏览器body...
+ }
+      function startmove1(obj,iTarget) {
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function(){
+                  var  aur=parseInt(getstyle(obj,'width'));
+                  var speed=(iTarget-aur)/8;
+                  speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                  if (aur==iTarget) {
+                        clearInterval(obj.timer);
+                  }else{
+                        obj.style['width']=aur+speed+'px';
+                        //obj.style.fontSize=parseInt(getstyle(obj,'fontSize'))+1+"px";
+                  }//offsetWidth为整个的div的值包括border
+                  //obj.style.width为div的width（不包括border）；
+                              },30);
+            // body...
+      }
+          function startmove2(obj,iTarget) {
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function(){
+                 var bur=parseInt(getstyle(obj,'height'));
+                  var speed=(iTarget-bur)/8;
+                  speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                  if (bur==iTarget) {
+                        clearInterval(obj.timer);
+                  }else{
+                        obj.style['height']=bur+speed+'px';
+                  }//offsetWidth为整个的div的值包括border
+                  //obj.style.width为div的width（不包括border）；
+                              },30);
+           
+      }
+</script>
+</head>
+
+<body>
+<ul>
+<li id="li1">nihao      </li>
+<li id='li2'>     </li>
+
+</ul>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js的多物体任意值的变换运动</title>
+<style>
+*{margin: 0;padding: 0;}
+ul{list-style: none	;
+}
+ul li{width: 100px;height: 100px;background: red;margin-top: 10px;border: 2px solid blue;
+font-size: 14px;color: yellow;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		/*var Oli=document.getElementsByTagName('li');
+		for (var i = 0; i<Oli.length; i++){
+			 Oli[i].timer=null;//给每一个li设置timer才不会导致他们去抢timer。
+			 /*
+			 1，for循环为每一个TagNameList【i】添加事件（遍历每一个li），并添加属性来区分各自的定时器（并取消定时器）
+			 2，利用参数中的挺好this来指定所选择的当前的对象
+			 3，多物体运动时不要共用一个值，在对象上定义一个单独属性保持值
+			 4，存在多物体共用一个值，并且这个值会大生改变时最好单独赋值，避免发生争用的情况*/
+		/*Oli[i].onmouseover=function () {
+			startmove(this,400);
+			// body...
+		}
+		Oli[i].onmouseout=function(){
+			startmove(this,100);
+		}*/
+            // body...
+           // var timer1=null;
+           // var timer2=null;
+          var li1=document.getElementById('li1');
+          var   li2=document.getElementById('li2');
+        li1.onmouseover=function(){
+            startmove(this,'width',400);
+        } 
+        li1.onmouseout=function(){
+            startmove(this,'width',100);
+        } 
+        li2.onmouseover=function(){
+            startmove(this,'height',400);
+        } 
+        li2.onmouseout=function(){
+            startmove(this,'height',100);
+        } 
+            }
+
+     function getstyle(obj,attr) {
+      if(obj.currentStyle){//IE浏览器
+            return obj.currentStyle[attr];
+
+      }else{return getComputedStyle(obj,false)[attr]
+}     // firefox浏览器body...
+ }
+      function startmove(obj,bttr,iTarget) {
+      	//var obj.timer=null;
+      	clearInterval(obj.timer);
+      	//var speed=(iTarget-obj.offsetWidth)/8;
+      		//speed=speed>0?Math.ceil(speed):Math.floor(speed);
+      	obj.timer=setInterval(function(){
+                  var  aur=parseInt(getstyle(obj,bttr));
+      		var speed=(iTarget-aur)/8;
+      		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+      		if (aur==iTarget) {
+      			clearInterval(obj.timer);
+      		}else{
+      			obj.style[bttr]=aur+speed+'px';
+      			//obj.style.fontSize=parseInt(getstyle(obj,'fontSize'))+1+"px";
+      		}//offsetWidth为整个的div的值包括border
+      		//obj.style.width为div的width（不包括border）；
+      		      	},30);
+      	// body...
+      }/*
+      parseInt(String s,[int radix])用于字符串返回一个整型数字
+      用js的style属性可以获得html标签样式，，但是不能获取非行间样式。即：  用document.getElementById(‘element').style.xxx可以获取元素的样式信息，可是它获取的只是DOM元素style属性里的样式规则，对于通过class属性引用的外部样式表，就拿不到我们要的信息了。所以js用currentStyle和getComputedStyle获取css的非行间样式；*/
+  
+ /*function getstyle(obj,attr) {
+ 	if(obj.currentStyle){//IE浏览器
+ 		return obj.currentStyle[attr];
+
+ 	}else{return getComputerStyle(obj,false)[sttr]
+} 	// firefox浏览器body...
+ }*/
+ /* function startmove2(obj,bttr,iTarget) {
+
+            var obj.timer=null;
+            clearInterval(obj.timer);
+            //var speed=(iTarget-obj.offsetWidth)/8;
+                  //speed=speed>0?Math.ceil(speed):Math.floor(speed);
+            obj.timer=setInterval(function(){
+
+                 var bur=parseInt(getstyle(obj,bttr));
+                  var speed=(iTarget-bur)/8;
+                  speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                  if (bur==iTarget) {
+                        clearInterval(obj.timer);
+                  }else{
+                        obj.style[bttr]=bur+speed+'px';
+                        //obj.style.fontSize=parseInt(getstyle(obj,'fontSize'))+1+"px";
+                  }//offsetWidth为整个的div的值包括border
+                  //obj.style.width为div的width（不包括border）；
+                              },30);
+            // body...
+      }/*
+      */
+</script>
+</head>
+
+<body>
+<ul>
+<li id="li1">nihao	</li>
+<li id='li2'>	</li>
+
+</ul>
+</body>
+</html>
