@@ -31,7 +31,7 @@ module.exports = {
             meta: {
                 viewport: ' user-scalable=no, maximum-scale=1, minimum-scale=1, width=device-width, initial-scale=1, shrink-to-fit=no'
             },
-            favicon: path.resolve(__dirname, "../static/img/agree.png"),
+            favicon: path.resolve(__dirname, "../static/img/favicon.ico"),
             minify: {
                 collapseWhitespace: true,
             },
