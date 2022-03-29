@@ -16,31 +16,50 @@ const Fn = function () {
 
 const fn = new Fn();
 
-console.log('prototype', Fn.prototype.constructor)
+// console.log('prototype', Fn.__proto__.constructor === Function)
 
-console.log('prototype', Fn.prototype.constructor === Fn)
+// console.log('prototype', Fn.__proto__.__proto__ === Object.prototype)
 
-console.log('prototype', Fn.prototype.__proto__)
+// console.log('prototype', Fn.prototype.constructor)
 
-console.log('prototype', Fn.prototype.__proto__ === Object.prototype)
+// console.log('prototype', Fn.prototype.constructor === Fn)
 
-console.log('prototype', Object.prototype.constructor === Object)
+// console.log('prototype', Fn.prototype.__proto__)
 
-console.log('prototype', Fn.prototype.__proto__.__proto__)
+// console.log('prototype', Fn.prototype.__proto__ === Object.prototype)
 
-console.log('prototype', Object.prototype.__proto__)
+// console.log('prototype', Fn.prototype.__proto__ === Function.prototype)
 
-console.log('prototype', Object.prototype.__proto__ === null)
+// console.log('prototype', Object.prototype.constructor === Object)
 
-console.log('fn', fn.__proto__ === Fn.prototype)
+// console.log('prototype', Fn.prototype.__proto__.__proto__)
 
-console.log('fn', fn.__proto__.constructor)
+// console.log('prototype', Fn.__proto__ === Function.prototype)
 
-console.log('fn', fn.__proto__.__proto__)
+// console.log('prototype', Function.__proto__ === Function.prototype)
 
-console.log('fn', fn.__proto__.__proto__.constructor)
+// console.log('prototype', Function.prototype.constructor === Function )
 
-console.log('fn', fn.__proto__.__proto__.__proto__)
+// console.log('prototype', Function.prototype.__proto__ === Object.prototype)
+
+// console.log('prototype', Function.prototype.__proto__.__proto__ === null)
+
+// console.log('prototype', Object.prototype.__proto__)
+
+// console.log('prototype', Object.prototype.__proto__ === null)
+
+// console.log('fn', fn.__proto__ === Fn.prototype)
+
+// console.log('fn', fn.__proto__.constructor)
+
+// console.log('fn', fn.__proto__.__proto__)
+
+// console.log('fn', fn.__proto__.__proto__.constructor)
+
+// console.log('fn', fn.__proto__.__proto__.__proto__)
+
+
+
 
 
 
