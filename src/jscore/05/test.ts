@@ -35,3 +35,19 @@ for (const i of fn[Symbol.iterator]()) {
 
 const str = 'test'
 console.log('test', str[Symbol.iterator]())
+// let regexp = /\[bc\]at/i
+
+// console.log('ignoreCase', regexp.ignoreCase)
+
+// console.log(regexp.global, 'global')
+
+// console.log(regexp.source, 'source')
+
+console.log('global', global)
+
+console.log('this', this)
+
+
+export default {}
+
+
